@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import requireTransform from 'vite-plugin-require-transform';
 import { resolve } from 'path';
 
 // https://vitejs.dev/config/
@@ -9,5 +10,10 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    requireTransform({
+      fileRegex: /.ts$|.tsx$|.vue$/,
+    }),
+  ],
 });
