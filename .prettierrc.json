@@ -14,6 +14,5 @@
     "proseWrap": "preserve",
     "htmlWhitespaceSensitivity": "css",
     "endOfLine": "auto",
-    "rangeStart": 0,
-    "rangeEnd": null
+    "rangeStart": 0
 }
