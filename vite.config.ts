@@ -1,6 +1,7 @@
 import { defineConfig, ConfigEnv, UserConfig, loadEnv, PluginOption } from 'vite';
 import react from '@vitejs/plugin-react';
 import requireTransform from 'vite-plugin-require-transform';
+import { createHtmlPlugin } from "vite-plugin-html";
 import { resolve } from 'path';
 import { wrapperEnv } from './src/utils/getEnv.ts';
 import dotenv from "dotenv";
@@ -32,6 +33,13 @@ export default defineConfig((mode: ConfigEnv): UserConfig =>{
     },
     plugins: [
       react(),
+      createHtmlPlugin({
+				inject: {
+					data: {
+						title: viteEnv.VITE_GLOB_APP_TITLE
+					}
+				}
+			}),
       requireTransform({
         fileRegex: /.ts$|.tsx$|.vue$/,
       }),
