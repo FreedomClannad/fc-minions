@@ -1,4 +1,4 @@
-import { defineConfig, ConfigEnv, UserConfig, loadEnv, PluginOption } from 'vite';
+import { defineConfig, ConfigEnv, UserConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import requireTransform from 'vite-plugin-require-transform';
 import { createHtmlPlugin } from "vite-plugin-html";
