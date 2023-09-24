@@ -1,0 +1,24 @@
+.line-animation {
+    span{
+        position:  relative;
+        font-size: 40px;
+        color: #333;
+        font-weight:  600;
+        text-decoration: none;
+    }
+
+    span:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        height: 6px;
+        width: 0;
+        background-color: #5070f4;
+        border-radius: 50px;
+        transition: width .3s ease;
+
+    }
+    span:hover:before {
+        width: 100%;
+    }
+}
