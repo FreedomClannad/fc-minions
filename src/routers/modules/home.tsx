@@ -6,7 +6,7 @@ const homeRoute: Array<RouteObject> = [
 		path: "/home",
 		element: <Home />,
 		meta: {
-			title: "首页",
+			title: "首页1",
 			key: "Home"
 		}
 	}
