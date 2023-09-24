@@ -1,5 +1,5 @@
+import IndexLayout from "@/layout";
 import HomeView from "@/views/home";
-import path from "path";
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 
 // 导入所有的router
@@ -33,7 +33,10 @@ export const rootRouter: RouteObject[] = [
 		path: "/",
 		element: <Navigate to="/home" />
 	},
-	...routerArray
+	{
+		element: <IndexLayout />,
+		children: [...routerArray]
+	}
 ];
 
 const Router = () => {
