@@ -1,5 +1,4 @@
 const HomeView = () => {
-	const test = () => {};
 	return (
 		<div>
 			<div>Test</div>

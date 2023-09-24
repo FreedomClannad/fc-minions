@@ -44,5 +44,6 @@ export default defineConfig((mode: ConfigEnv): UserConfig =>{
         fileRegex: /.ts$|.tsx$|.vue$/,
       }),
     ],
+    assetsInclude: ['**/*.md']
   }
 });
