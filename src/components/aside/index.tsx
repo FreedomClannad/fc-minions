@@ -1,23 +1,41 @@
 import { routerArray } from "@/routers";
 import { RouteObject } from "@/routers/interface";
-const Aside = () => {
-	console.log(routerArray);
-	const menuList = (menu: RouteObject) => {
-		if (menu.children) {
-			return menu.children.map(value => {
-				return (
-					<div>
-						<span>{menu.meta?.title}</span>
-						<div>{menuList(value)}</div>
-					</div>
-				);
-			});
-		} else {
-			return <span>{menu.meta?.title}</span>;
-		}
+import "./index.scss";
+import { PathObject } from "@/routers/utils";
+
+const menuList = (menu: RouteObject) => {
+	console.log(menu);
+	const { toPath } = PathObject();
+	// 菜单点击事件
+	const menuClick = (path: string = "") => {
+		toPath(path);
 	};
+	if (menu.children) {
+		return menu.children.map(value => {
+			return (
+				<div>
+					<span className="menu-title">{menu.meta?.title}</span>
+					<div style={{ marginLeft: 10 }}>{menuList(value)}</div>
+				</div>
+			);
+		});
+	} else {
+		return (
+			<span
+				className="menu-title"
+				onClick={() => {
+					menuClick(menu.path);
+				}}
+			>
+				{menu.meta?.title}
+			</span>
+		);
+	}
+};
+
+const Aside = () => {
 	return (
-		<div>
+		<div className="aside-body">
 			{routerArray.map(menu => {
 				console.log(menu);
 
