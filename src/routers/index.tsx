@@ -5,7 +5,7 @@ import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 // 导入所有的router
 const allRouters = import.meta.glob("./modules/*.tsx", { eager: true });
 // 遍历modules里面的所有模块
-const routerArray: RouteObject[] = [];
+export const routerArray: RouteObject[] = [];
 Object.keys(allRouters).forEach(item => {
 	// TODO 这里暂时有问题，暂时先屏蔽，问题是出现在ts校验上。
 	// @ts-ignore

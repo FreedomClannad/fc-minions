@@ -6,9 +6,17 @@ const practiceRouter: Array<RouteObject> = [
 		children: [
 			{
 				path: "underline-animation",
-				element: <UnderlineAnimation />
+				element: <UnderlineAnimation />,
+				meta: {
+					title: "下划线从左到右滚动出来动画",
+					key: "underline-animation"
+				}
 			}
-		]
+		],
+		meta: {
+			title: "个人寻找",
+			key: "practice"
+		}
 	}
 ];
 
