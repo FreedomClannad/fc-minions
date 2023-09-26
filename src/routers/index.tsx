@@ -39,6 +39,7 @@ export const rootRouter: RouteObject[] = [
 	},
 	{
 		element: <IndexLayout />,
+		// @ts-ignore
 		children: [...routerArray]
 	}
 ];
