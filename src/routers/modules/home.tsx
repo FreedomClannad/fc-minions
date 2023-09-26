@@ -7,7 +7,8 @@ const homeRoute: Array<RouteObject> = [
 		element: <Home />,
 		meta: {
 			title: "首页",
-			key: "Home"
+			key: "Home",
+			menuNum: 1
 		}
 	}
 ];

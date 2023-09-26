@@ -1,11 +1,11 @@
 import { routerArray } from "@/routers";
 import { RouteObject } from "@/routers/interface";
 import "./index.scss";
-import { PathObject } from "@/routers/utils";
+import { usePath } from "@/routers/utils";
 
 const menuList = (menu: RouteObject) => {
 	console.log(menu);
-	const { toPath } = PathObject();
+	const { toPath } = usePath();
 	// 菜单点击事件
 	const menuClick = (path: string = "") => {
 		toPath(path);

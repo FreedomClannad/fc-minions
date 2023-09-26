@@ -13,19 +13,22 @@ const cssInspiration: Array<RouteObject> = [
 						element: <BashWayTenterElement />,
 						meta: {
 							title: "实现水平垂直居中最便捷的方法",
-							key: "bast-way-tocenter-element"
+							key: "bast-way-tocenter-element",
+							menuNum: 1
 						}
 					}
 				],
 				meta: {
 					title: "布局（Layout）",
-					key: "layout"
+					key: "layout",
+					menuNum: 1
 				}
 			}
 		],
 		meta: {
 			title: "CSS Inspiration",
-			key: "cssInspiration"
+			key: "cssInspiration",
+			menuNum: 2
 		}
 	}
 ];

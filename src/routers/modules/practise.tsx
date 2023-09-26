@@ -15,7 +15,8 @@ const practiceRouter: Array<RouteObject> = [
 		],
 		meta: {
 			title: "个人寻找",
-			key: "practice"
+			key: "practice",
+			menuNum: 3
 		}
 	}
 ];
