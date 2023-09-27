@@ -2,7 +2,7 @@ export interface MetaProps {
   keepAlive?: boolean;
   title: string;
   key?: string;
-  menuNum?: number;
+  menuOrder?: number;
 }
 
 export interface RouteObject {

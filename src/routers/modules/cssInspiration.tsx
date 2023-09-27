@@ -3,7 +3,7 @@ import { RouteObject } from "../interface";
 
 const cssInspiration: Array<RouteObject> = [
 	{
-		path: "/cssInspiration",
+		path: "cssInspiration",
 		children: [
 			{
 				path: "layout",
@@ -14,21 +14,21 @@ const cssInspiration: Array<RouteObject> = [
 						meta: {
 							title: "实现水平垂直居中最便捷的方法",
 							key: "bast-way-tocenter-element",
-							menuNum: 1
+							menuOrder: 1
 						}
 					}
 				],
 				meta: {
 					title: "布局（Layout）",
 					key: "layout",
-					menuNum: 1
+					menuOrder: 1
 				}
 			}
 		],
 		meta: {
 			title: "CSS Inspiration",
 			key: "cssInspiration",
-			menuNum: 2
+			menuOrder: 2
 		}
 	}
 ];

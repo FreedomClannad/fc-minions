@@ -1,7 +1,8 @@
 import IndexLayout from "@/layout";
 import HomeView from "@/views/home";
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
-import { routerSort } from "./utils";
+import { addRouters, routerSort, mergeRoutes } from "./utils";
+import { MetaProps } from "./interface";
 
 // 导入所有的router
 const allRouters = import.meta.glob("./modules/*.tsx", { eager: true });
@@ -21,17 +22,20 @@ console.log(routerArray);
 
 // TODO 这里准备用自动导入生成路由，暂时没有思路，后续有思路在调整
 const pages = import.meta.glob("../views/**/page.ts", { eager: true, import: "default" });
+const pageComps = import.meta.glob("../views/**/index.tsx");
+console.log(pageComps);
 
 const routers = Object.entries(pages).map(([path, meta]) => {
-	console.log(path);
+	const n_path = path.replace("../views", "").replace("/page.ts", "");
+	const index_path = path.replace("/page.ts", "/index.tsx");
+	const pathArray = n_path.split("/").filter(Boolean);
+	console.log(pageComps[index_path]);
 
-	return {
-		path: "/test",
-		element: <HomeView />,
-		meta
-	};
+	return addRouters(pathArray, pageComps[index_path], meta as MetaProps);
 });
-console.log(routers);
+
+const n_routers = mergeRoutes(routers);
+
 export const rootRouter: RouteObject[] = [
 	{
 		path: "/",
@@ -40,7 +44,7 @@ export const rootRouter: RouteObject[] = [
 	{
 		element: <IndexLayout />,
 		// @ts-ignore
-		children: [...routerArray]
+		children: [...n_routers]
 	}
 ];
 
