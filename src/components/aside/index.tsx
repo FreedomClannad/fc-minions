@@ -1,4 +1,4 @@
-import { routerArray } from "@/routers";
+import { n_routers } from "@/routers";
 import { RouteObject } from "@/routers/interface";
 import "./index.scss";
 import { usePath } from "@/routers/utils";
@@ -21,14 +21,16 @@ const menuList = (menu: RouteObject) => {
 		});
 	} else {
 		return (
-			<span
-				className="menu-title"
-				onClick={() => {
-					menuClick(menu.path);
-				}}
-			>
-				{menu.meta?.title}
-			</span>
+			<div>
+				<span
+					className="menu-title menu-click"
+					onClick={() => {
+						menuClick(menu.path);
+					}}
+				>
+					{menu.meta?.title}
+				</span>
+			</div>
 		);
 	}
 };
@@ -36,7 +38,7 @@ const menuList = (menu: RouteObject) => {
 const Aside = () => {
 	return (
 		<div className="aside-body">
-			{routerArray.map(menu => {
+			{n_routers.map(menu => {
 				console.log(menu);
 
 				return menuList(menu);

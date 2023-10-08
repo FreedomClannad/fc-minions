@@ -29,12 +29,17 @@ const routers = Object.entries(pages).map(([path, meta]) => {
 	const n_path = path.replace("../views", "").replace("/page.ts", "");
 	const index_path = path.replace("/page.ts", "/index.tsx");
 	const pathArray = n_path.split("/").filter(Boolean);
-	console.log(pageComps[index_path]);
+	if (index_path) {
+		console.log(index_path);
+		console.log(pageComps[index_path]);
+	}
 
 	return addRouters(pathArray, pageComps[index_path], meta as MetaProps);
 });
+console.log(routers);
 
-const n_routers = mergeRoutes(routers);
+export const n_routers = mergeRoutes(routers);
+console.log(n_routers);
 
 export const rootRouter: RouteObject[] = [
 	{

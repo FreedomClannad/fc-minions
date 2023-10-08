@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { routerArray } from ".";
+import { n_routers } from ".";
 import { MetaProps, RouteObject } from "./interface";
 import React from "react";
 import lazyLoad from "@/routers/lazyLoad.tsx";
@@ -7,17 +7,22 @@ import lazyLoad from "@/routers/lazyLoad.tsx";
 // 创建路由数组并添加相应的Meta信息
 export const addRouters = (pathList: string[], indexPath: any, meta: MetaProps): RouteObject => {
 	const path = pathList.shift();
-	if (pathList.length === 0) {
+	if (pathList.length === 0 && indexPath) {
 		return {
 			path,
 			meta,
 			//element: lazyLoad(React.lazy(() => import(indexPath)))
 			element: lazyLoad(React.lazy(indexPath))
 		};
-	} else {
+	} else if (pathList.length > 0) {
 		return {
 			path,
 			children: [addRouters(pathList, indexPath, meta)]
+		};
+	} else {
+		return {
+			path,
+			meta
 		};
 	}
 };
@@ -28,13 +33,20 @@ export const mergeRoutes = (routerArray: RouteObject[]) => {
 	for (const item of routerArray) {
 		if (mergedMap.has(item.path as string)) {
 			// 如果已存在相同路径的项目，合并meta信息
-			const existingItem = mergedMap.get(item.path as string)!;
+			let existingItem = mergedMap.get(item.path as string)!;
+			console.log(existingItem);
+
 			if (item.meta) {
 				existingItem.meta = { ...existingItem.meta, ...item.meta };
 			}
-			if (item.children && existingItem.children) {
-				existingItem.children = mergeRoutes(existingItem.children.concat(item.children));
+			if (item.children) {
+				if (existingItem.children) {
+					existingItem.children = mergeRoutes(existingItem.children.concat(item.children));
+				} else {
+					existingItem.children = mergeRoutes(item.children);
+				}
 			}
+			console.log(existingItem);
 		} else {
 			// 否则将项目添加到映射中
 			mergedMap.set(item.path as string, { ...item });
@@ -87,7 +99,9 @@ export const usePath = () => {
 	const navigate = useNavigate();
 	const toPath = (path: string) => {
 		if (path) {
-			const jumpPath = findFullPath(routerArray, path);
+			const jumpPath = findFullPath(n_routers, path);
+			console.log(jumpPath);
+
 			if (jumpPath) {
 				navigate(jumpPath);
 			}

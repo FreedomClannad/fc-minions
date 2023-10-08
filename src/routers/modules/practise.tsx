@@ -1,4 +1,4 @@
-import UnderlineAnimation from "@/views/Practice/underline_animation";
+import UnderlineAnimation from "@/views/Practice/underline-animation";
 import { RouteObject } from "../interface";
 const practiceRouter: Array<RouteObject> = [
 	{
