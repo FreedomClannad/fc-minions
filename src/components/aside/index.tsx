@@ -39,8 +39,6 @@ const Aside = () => {
 	return (
 		<div className="aside-body">
 			{n_routers.map(menu => {
-				console.log(menu);
-
 				return menuList(menu);
 			})}
 		</div>

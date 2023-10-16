@@ -66,12 +66,12 @@ export const routerSort = (routeList: RouteObject[]) => {
 	return routeList.sort((a: RouteObject, b: RouteObject) => {
 		if (a.meta && b.meta) {
 			if (a.meta.menuOrder && b.meta.menuOrder) {
-				return a.meta.menuOrder - b.meta.menuOrder;
+				return b.meta.menuOrder - a.meta.menuOrder;
 			} else {
-				return 0;
+				return -1;
 			}
 		} else {
-			return 0;
+			return -1;
 		}
 	});
 };

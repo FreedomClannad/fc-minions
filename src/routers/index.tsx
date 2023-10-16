@@ -38,7 +38,7 @@ const routers = Object.entries(pages).map(([path, meta]) => {
 });
 console.log(routers);
 
-export const n_routers = mergeRoutes(routers);
+export const n_routers = routerSort(mergeRoutes(routers));
 console.log(n_routers);
 
 export const rootRouter: RouteObject[] = [
