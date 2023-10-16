@@ -31,6 +31,15 @@ export default defineConfig((mode: ConfigEnv): UserConfig =>{
       open: viteEnv.VITE_OPEN,
       cors: true,
     },
+    css: {
+      // 配置 css-module
+      modules: {
+        // 开启 camelCase 格式变量名转换
+        localsConvention: "camelCase",
+        // 类名 前缀
+        generateScopedName: "[name]_[local]_[hash:base64:5]"
+      }
+    },
     plugins: [
       react(),
       createHtmlPlugin({

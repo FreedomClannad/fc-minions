@@ -1,0 +1,39 @@
+.g-container {
+    // position: relative;
+    height: 600px;
+    min-width: 400px;
+    // width: 100%;
+    & > div {
+        height: 100%;
+        float: left;
+        text-align: center;
+        color: #fff;
+        line-height: 200px;
+        font-size: 3vw;
+        // width: 100%;
+    }
+
+    .g-middle {
+        // position: relative;
+        width: 100%;
+        background: #cc6630;
+
+        .g-middle-inner {
+            margin: 0 200px;
+        }
+    }
+
+    .g-left {
+        // position: relative;
+        width: 200px;
+        background: #ffcc00;
+        margin-left: -100%;
+    }
+
+    .g-right {
+        // position: relative;
+        width: 200px;
+        background: pink;
+        margin-left: -200px;
+    }
+}
