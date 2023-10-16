@@ -5,7 +5,7 @@ const IndexLayout = () => {
   return (
     <div className="layout-body">
       <Aside />
-      <div>
+      <div className='content-body'>
         <Outlet />
       </div>
     </div>

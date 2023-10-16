@@ -1,4 +1,4 @@
 export default {
-    title: "home",
+    title: "首页",
     menuNum: 1,
 }

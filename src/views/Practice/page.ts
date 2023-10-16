@@ -1,4 +1,4 @@
 export default {
-    title: "Practice",
+    title: "个人寻找",
     menuNum: 3,
 }

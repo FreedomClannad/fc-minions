@@ -1,9 +1,7 @@
 const HomeView = () => {
 	return (
 		<div>
-			<div>Test</div>
-			<div>111</div>
-			<div></div>
+			<div>本项目是练习CSS练习项目项目</div>
 		</div>
 	);
 };
