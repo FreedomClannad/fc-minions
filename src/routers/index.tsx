@@ -1,5 +1,4 @@
 import IndexLayout from "@/layout";
-import HomeView from "@/views/home";
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 import { addRouters, routerSort, mergeRoutes } from "./utils";
 import { MetaProps } from "./interface";

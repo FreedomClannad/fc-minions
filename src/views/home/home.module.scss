@@ -1,0 +1,15 @@
+.test {
+    font-size: 100px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, red , yellow, lime, aqua, blue, fuchsia);
+    animation: hue 6s liner infinite;
+}
+
+.test1 {
+    color: red;
+}
+
+.test2 {
+    filter: hue-rotate(180deg0);
+}
