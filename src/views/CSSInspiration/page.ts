@@ -1,4 +1,4 @@
 export default {
-    title: "CSS Inspiration",
-    menuNum: 2,
-}
+	title: "CSS Inspiration",
+	menuOrder: 2
+};
