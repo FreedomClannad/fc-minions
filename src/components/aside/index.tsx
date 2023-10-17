@@ -11,16 +11,16 @@ const menuList = (menu: RouteObject) => {
 	};
 	if (menu.children) {
 		return (
-			<div>
+			<>
 				<span>{menu.meta?.title}</span>
 				{menu.children.map(value => {
 					return <div style={{ marginLeft: 10 }}>{menuList(value)}</div>;
 				})}
-			</div>
+			</>
 		);
 	} else {
 		return (
-			<div>
+			<>
 				<span
 					className="menu-title menu-click"
 					onClick={() => {
@@ -29,7 +29,7 @@ const menuList = (menu: RouteObject) => {
 				>
 					{menu.meta?.title}
 				</span>
-			</div>
+			</>
 		);
 	}
 };
@@ -38,7 +38,7 @@ const Aside = () => {
 	return (
 		<div className="aside-body">
 			{n_routers.map(menu => {
-				return menuList(menu);
+				return <div>{menuList(menu)}</div>;
 			})}
 		</div>
 	);
