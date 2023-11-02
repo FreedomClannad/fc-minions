@@ -1,4 +1,3 @@
-import styles from "./home.module.scss";
 const HomeView = () => {
 	return (
 		<div>
