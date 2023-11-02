@@ -1,9 +1,12 @@
 .layout-body {
-  display: flex;
-  height: 100vh;
+	display: flex;
+	height: 100vh;
 }
 
 .content-body {
-  padding: 10px;
-  flex: 1;
+	padding: 10px;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
