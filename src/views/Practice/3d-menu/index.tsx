@@ -1,4 +1,4 @@
-import styles from "./3dmenu.module.scss";
+import styles from "./menu.module.scss";
 const floatingMenu = () => {
 	return (
 		<ul className={styles.body}>
