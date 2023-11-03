@@ -12,9 +12,13 @@ const menuList = (menu: RouteObject) => {
 	if (menu.children) {
 		return (
 			<>
-				<span>{menu.meta?.title}</span>
+				<div className="menu-box">{menu.meta?.title}</div>
 				{menu.children.map(value => {
-					return <div style={{ marginLeft: 10 }}>{menuList(value)}</div>;
+					return (
+						<div className="menu-box" style={{ marginLeft: 10 }}>
+							{menuList(value)}
+						</div>
+					);
 				})}
 			</>
 		);
