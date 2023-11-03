@@ -1,0 +1,95 @@
+.outer {
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+	margin: 100px;
+	position: relative;
+	.inner1 {
+		// transform: rotate(45deg);
+		width: 100%;
+		height: 100%;
+		background-color: pink;
+		transition: all 0.5s;
+
+		&:nth-child(1):hover {
+			transform: rotate(45deg);
+		}
+
+		&:nth-child(2) {
+			width: 5px;
+			height: 5px;
+			background-color: red;
+			transform: none;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+		}
+	}
+
+	.inner2 {
+		transform-origin: 50% 0;
+		width: 100%;
+		height: 100%;
+		background-color: pink;
+		transform: all 0.5s;
+
+		&:nth-child(1):hover {
+			transform: rotate(180deg);
+		}
+
+		&:nth-child(2) {
+			width: 5px;
+			height: 5px;
+			background-color: red;
+			transform: none;
+			position: absolute;
+			top: -2.5px;
+			left: 50px;
+		}
+	}
+
+	.inner3 {
+		transform-origin: 100% 50%;
+		width: 100%;
+		height: 100%;
+		background-color: pink;
+		transition: all 0.5s;
+
+		&:nth-child(1):hover {
+			transform: rotate(150deg);
+		}
+
+		&:nth-child(2) {
+			width: 5px;
+			height: 5px;
+			background-color: red;
+			transform: none;
+			position: absolute;
+			top: 47.5px;
+			left: 97.5px;
+		}
+	}
+
+	.inner4 {
+		transform-origin: 0 0;
+		width: 100%;
+		height: 100%;
+		background-color: pink;
+		transition: all 0.5s;
+		// transform: rotate(-20deg);
+
+		&:nth-child(1):hover {
+			transform: rotate(-90deg);
+		}
+
+		&:nth-child(2) {
+			width: 5px;
+			height: 5px;
+			background-color: red;
+			transform: none;
+			position: absolute;
+			top: -2.5px;
+			left: -2.5px;
+		}
+	}
+}
