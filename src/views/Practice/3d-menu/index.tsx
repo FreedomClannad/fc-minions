@@ -1,26 +1,47 @@
 import styles from "./menu.module.scss";
+import { Icon } from "@iconify-icon/react";
 const floatingMenu = () => {
 	return (
 		<ul className={styles.body}>
 			<li>
-				<span className="iconfont icon-QQ"></span>
-				<span className="iconfont icon-QQ"></span>
+				<span>
+					<Icon icon="fa-brands:weixin" />
+				</span>
+				<span>
+					<Icon icon="fa-brands:weixin" />
+				</span>
 			</li>
 			<li>
-				<span className="iconfont icon-weixin"></span>
-				<span className="iconfont icon-weixin"></span>
+				<span>
+					<Icon icon="ant-design:weibo-outlined" />
+				</span>
+				<span>
+					<Icon icon="ant-design:weibo-outlined" />
+				</span>
 			</li>
 			<li>
-				<span className="iconfont icon-douyin"></span>
-				<span className="iconfont icon-douyin"></span>
+				<span>
+					<Icon icon="basil:qq-solid" />
+				</span>
+				<span>
+					<Icon icon="basil:qq-solid" />
+				</span>
 			</li>
 			<li>
-				<span className="iconfont icon-xinlangweibo"></span>
-				<span className="iconfont icon-xinlangweibo"></span>
+				<span>
+					<Icon icon="mingcute:twitter-line" />
+				</span>
+				<span>
+					<Icon icon="mingcute:twitter-line" />
+				</span>
 			</li>
 			<li>
-				<span className="iconfont icon-shouji"></span>
-				<span className="iconfont icon-shouji"></span>
+				<span>
+					<Icon icon="ant-design:aliwangwang-filled" />
+				</span>
+				<span>
+					<Icon icon="ant-design:aliwangwang-filled" />
+				</span>
 			</li>
 		</ul>
 	);
