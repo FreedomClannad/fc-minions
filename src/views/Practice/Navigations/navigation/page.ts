@@ -1,4 +1,4 @@
 export default {
-	title: "导航栏",
+	title: "动画跟随选中的效果",
 	menuOrder: 6
 };

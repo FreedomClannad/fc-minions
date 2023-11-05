@@ -1,4 +1,4 @@
 export default {
-	title: "3d导航",
+	title: "向上滚动",
 	menuOrder: 4
 };

@@ -13,13 +13,15 @@ const menuList = (menu: RouteObject) => {
 		return (
 			<>
 				<div className="menu-box">{menu.meta?.title}</div>
-				{menu.children.map(value => {
-					return (
-						<div className="menu-box" style={{ marginLeft: 10 }}>
-							{menuList(value)}
-						</div>
-					);
-				})}
+				<div>
+					{menu.children.map(value => {
+						return (
+							<div className="menu-box" style={{ marginLeft: 20 }}>
+								{menuList(value)}
+							</div>
+						);
+					})}
+				</div>
 			</>
 		);
 	} else {

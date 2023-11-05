@@ -1,4 +1,4 @@
 export default {
-	title: "悬浮菜单",
+	title: "悬浮向上",
 	menuOrder: 3
 };

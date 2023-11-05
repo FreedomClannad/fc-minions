@@ -1,0 +1,57 @@
+.streamer-body {
+	width: 600px;
+	height: 600px;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	& > a {
+		position: relative;
+		display: inline-block;
+		width: 200px;
+		height: 60px;
+		color: #fff;
+		line-height: 60px;
+		text-align: center;
+		text-decoration: none;
+		background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+		background-size: 400%;
+		border-radius: 10px;
+		z-index: 2;
+
+		// 添加光影效果
+		&::before {
+			content: "";
+			position: absolute;
+			left: -5px;
+			top: -5px;
+			right: -5px;
+			bottom: -5px;
+			z-index: -1;
+			background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+			background-size: 400%;
+			border-radius: 10px;
+			opacity: 0;
+			transition: all 1s;
+		}
+
+		&:hover {
+			animation: streamerAnimate 8s linear infinite;
+		}
+
+		&:hover::before {
+			filter: blur(20px);
+			opacity: 1;
+		}
+	}
+}
+// 设计流光动画(修改背景定位)
+@keyframes streamerAnimate {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 400% 0;
+	}
+}
