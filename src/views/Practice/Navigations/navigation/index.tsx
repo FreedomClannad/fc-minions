@@ -1,6 +1,5 @@
 import "./index.scss";
 import { Icon } from "@iconify-icon/react";
-import { log } from "console";
 import { useEffect, useRef, useState } from "react";
 
 interface menuInterface {
