@@ -35,7 +35,7 @@ const navigateView = () => {
 	const firstHTML = () => {
 		return (
 			<>
-				<div ref={navigateRef} className="navigation">
+				<div ref={navigateRef} className="navigation" style={{ marginTop: 20 }}>
 					<ul>
 						<li className="active">
 							<a href="#">
@@ -128,7 +128,7 @@ const navigateView = () => {
 
 	const secondView = () => {
 		return (
-			<div style={{ marginTop: 50 }}>
+			<div style={{ marginTop: 20 }}>
 				<div ref={navigateRef2} className="navigation2">
 					<ul>
 						{menuList.map(menu => {
@@ -160,7 +160,10 @@ const navigateView = () => {
 
 	return (
 		<div>
-			{firstHTML()} {secondView()}
+			<div>普通版本</div>
+			{firstHTML()}
+			<div style={{ marginTop: 30 }}>使用React版本编写</div>
+			{secondView()}
 		</div>
 	);
 };
